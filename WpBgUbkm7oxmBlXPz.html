@@ -1,0 +1,55 @@
+<html><head><base href="https://websitename.com/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a Normal Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <script>
+        // Create hidden links for SEO and potential crawling
+        const hiddenLinks = [
+            'john',
+            'harry',
+            'alice',
+            'bob',
+            'charlie',
+            'diana',
+            'edward',
+            'fiona',
+            'george',
+            'helen'
+        ];
+
+        const linkContainer = document.createElement('div');
+        linkContainer.style.display = 'none';
+
+        hiddenLinks.forEach(name => {
+            const link = document.createElement('a');
+            link.href = `https://${name}.websitename.com`;
+            link.textContent = `${name}'s Page`;
+            linkContainer.appendChild(link);
+        });
+
+        document.body.appendChild(linkContainer);
+
+        // Redirect any subdomains to the main video
+        if (window.location.hostname !== 'websitename.com') {
+            window.location.href = 'https://websitename.com';
+        }
+    </script>
+</body>
+</html>
